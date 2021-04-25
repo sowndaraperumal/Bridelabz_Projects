@@ -1,0 +1,61 @@
+<html>
+<head><link rel="stylesheet" href="style.css"> 
+<script type="text/javascript">   
+function validationform() {
+	var re;
+	var x=document.forms.registerform.password.value;
+	if(x!="")
+	{
+		
+		if(x.length<=6)
+		{
+			alert("password reqired minimum 6 letter");
+			return false;
+		}
+		re=/[0-9]/;
+		if(!re.test(x))
+		{
+			alert("password must be  contain atleast one number");
+			return false;
+		}
+		re=/[A-Z]/; 
+		
+		if(!re.test(x))
+		{
+			alert("password must be contain atleast one uppercase letter");
+			return false;
+		}
+		re=/[a-z]/;
+		if(!re.test(x))
+		{
+			alert("password must be contain  atleast one lower case letter ");
+			return false;
+		}
+		// alert("You entered a valid password: " + x);
+		    return true;
+      }
+}
+</script>
+
+</head>
+<body>
+<form name="registerform" action="valid"    onsubmit="return validationform()" method="post">
+<label for="firstname">First Name:</label><input type="text" required autocomplete="off " name="firstname">
+<br></br>
+<label for="lastname">Last Name:</label><input type="text" required autocomplete="off" name="lastname"> 
+<br></br>
+<label for="email">Email Id:</label><input type="email" required autocomplete="off" name="email">
+<br></br>
+<label for="password">Set A Password:</label><input type="password" name="password">
+<br></br>
+<label for="role">Role:</label><input type="text" name="role">
+<br></br>
+<button type="submit">submit</button>
+</form>
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,49 @@
+<div class="label-padding">
+  <mat-card >
+    <mat-card-title class="size">Edit Labels</mat-card-title>
+   
+    <mat-card-subtitle>
+        <mat-toolbar>
+            <mat-toolbar-row  style="background-color:white">
+        <button mat-icon-button style="margin:5px;">
+            <mat-icon class="mat-18">clear</mat-icon>
+          </button>
+        
+                        <mat-form-field>
+              <input matInput placeholder="create new label" >
+              
+              </mat-form-field>
+              
+            
+                                   
+            <div >                 <button mat-icon-button>
+                                      <mat-icon class="material-icons">done</mat-icon>
+                                    </button> 
+                                  </div>
+                 
+                                  </mat-toolbar-row>
+                                  </mat-toolbar>
+      <!-- <input matInput placeholder="Enter Label Name" [(ngModel)]="Label"> -->
+      
+    </mat-card-subtitle>
+<!--   
+    <mat-card-content> 
+      <div *ngFor = "let labesx of data.labelsall">
+          <mat-form-field class="widthadjust">
+        <input matInput [(ngModel)]="labesx.labelName" > 
+      </mat-form-field>
+        <button mat-icon-button (click)="labelnameupdate(labesx)"><mat-icon>
+            check_circle
+        </mat-icon></button>
+      
+      </div>
+    </mat-card-content> -->
+    <mat-divider></mat-divider>
+    <mat-card-footer >
+      <!-- <mat-dialog-actions></mat-dialog-actions> -->
+      <div style="margin-left:88%"> 
+      <button mat-icon-button  [mat-dialog-close]="Label" (click)="LabelCreted()">Done</button>
+    </div>   
+    </mat-card-footer>
+  </mat-card>
+</div>

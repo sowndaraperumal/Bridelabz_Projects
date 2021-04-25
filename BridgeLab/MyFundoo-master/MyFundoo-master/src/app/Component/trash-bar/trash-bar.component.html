@@ -1,0 +1,27 @@
+
+
+<div   class="notes" fxLayout="row wrap" fxLayoutGap="32px" fxLayoutAlign="flex-start">
+    <div class="center" >
+    <mat-card class ="cardresize" [ngStyle]="{'backgroundColor':noteDetail.color}" ><!-- -->
+      <mat-card-title >  
+       {{noteDetail.title}}
+      </mat-card-title>
+      <mat-card-subtitle >
+      <p>
+       {{noteDetail.description}} 
+      </p> 
+      </mat-card-subtitle>
+      
+                    <button mat-icon-button [matMenuTriggerFor]="menu" matTooltip="More">
+                        <mat-icon class="more_vert"style="font-size: 15px;">more_vert</mat-icon>
+    
+                    </button>
+                
+                    <mat-menu #menu="matMenu">
+                      <button mat-menu-item (click)="restorenote()">restore note </button>
+                      <button mat-menu-item (click)="noteDelete()">Delete forever</button>
+                    
+                    </mat-menu>
+            
+      </mat-card> </div>
+    </div>        

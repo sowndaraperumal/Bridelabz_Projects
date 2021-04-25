@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app>
+  <display-name>UI-project</display-name>
+  <welcome-file-list>
+  <welcome-file>form.html</welcome-file></welcome-file-list>
+<servlet-mapping>
+<servlet-name> Firstserv</servlet-name>
+<url-pattern>/fx</url-pattern>
+
+</servlet-mapping>
+<servlet>
+<servlet-name> Firstserv</servlet-name>
+<servlet-class>  com.bridgeit.contorller.FirstServlet</servlet-class>
+</servlet>
+</web-app>

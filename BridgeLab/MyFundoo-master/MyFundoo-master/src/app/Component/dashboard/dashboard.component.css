@@ -1,0 +1,228 @@
+/* .grid-container {
+  margin: 20px;
+}
+
+.dashboard-card {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  right: 15px;
+  bottom: 15px;
+}
+
+.more-button {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+}
+
+.dashboard-card-content {
+  text-align: center;
+}
+.dashboard-card-menu-icon{
+    width: 35px;
+    height: 5px;
+    background-color: black;
+    margin: 6px 0;
+  
+}.dashboard-card-mySearch {
+  float: left;
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}*/
+/* .example-container {
+  width: 400px;
+  height: 200px;
+  margin: 10px;
+  border: 1px solid #555;
+}  */
+.dashboardToolBar {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  
+}
+.dailog-style{
+  width:50%;
+  padding: 0%;
+}
+.iconAndTitle {
+  display: flex;
+
+}
+
+.dashboardTitle {
+  vertical-align: middle;
+  line-height: 49px;
+}
+
+.searchToolBar {
+
+    display: flex;
+  width: 500px;
+}
+
+.searchInputBar {
+  border-radius: 25px;
+
+  padding: 1%; 
+  
+  border: 2px solid #73AD21;
+  width: 100%;
+  
+}
+
+.mat-toolbar-single-row {
+  height: 50px;
+}
+
+.accountButton {
+height: 0px;
+width: 0px;
+
+  border-radius: 0px;
+  font-size: x-large;
+  
+border:1px solid;
+margin-right: 15px;
+}
+
+.namestyle
+{
+  opacity: 0.7;
+  font-size: 11px;
+}
+.sidenavBar {
+  position: absolute;
+  min-width: 250  px;
+  top: 50px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  background-color: #ffffff;
+}
+
+.sideNavList {
+  width: 250px;
+  height: 100%;
+  background-color: #ffffff;
+}
+
+.sideNavListItems,
+.sideNavlistItemsColored {
+  border-top-right-radius: 100px;
+  border-bottom-right-radius: 100px;
+  width: 250px;
+  font-size: 15px;
+  padding: 8px;
+  background-color: #ffffff;
+  color: #5f6368;
+  align-items: baseline;
+  text-align: left;
+}
+
+.sideNavlistItemsColored {
+  background-color: #f8e6af !important;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.sideNavListItems .mat-icon,
+.sideNavlistItemsColored .mat-icon {
+  padding-left: 10px;
+  padding-right: 30px;
+}
+
+.sideNavListItems:hover {
+  background-color: #e6e6e6;
+}
+
+.sidenavContent {
+  background-color: rgb(255, 255, 255); 
+  max-width: -webkit-fill-available;
+  margin-left: 200px;
+}
+
+.example-container {
+  position: absolute;
+  min-width: 250  px;
+  top: 50px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  background-color: #ffffff;
+}
+/* .center{
+
+  border-radius: 25px;
+
+  padding: 1%; 
+  
+  border: 2px solid rgb(207, 16, 16);
+  width: 5%;
+  text-align: center;
+  height: 10%;
+  align-self: center;
+    text-align-last:center;
+  
+} */
+
+.noteInputBar {
+
+  /* display: flex;
+  padding: 1%; 
+  
+  border: 2px ;
+  width: 40%; */
+  width:600px;
+  
+  margin:0 auto;
+  margin-top: 25px;
+}
+.angular-with-newlines {
+  white-space: pre-wrap;
+}
+.addNote {
+
+  margin: 9px auto 0 auto;
+  border: 1px;
+  border-color: white;
+  box-shadow: 0px 0px 1px 1px grey;
+  vertical-align: middle;
+  border-style: outset;
+  border-radius: 10px;
+  width: 600px;
+  padding: 10px;
+}
+.mat-icon-button{
+  opacity: 0.8;
+}
+.addNoteInputDiv {
+
+  width:600px;
+  
+  margin:0 auto;
+  margin-top: 25px;
+}
+
+.closeNoteButton {
+
+  margin-left: 283px;
+
+
+}
+
+.addNoteInput {
+  border: none;
+  outline: none;
+  resize: none;
+  width: 575px;
+  font-size: 14px;
+
+}
+.side{
+  width: 80%;
+}

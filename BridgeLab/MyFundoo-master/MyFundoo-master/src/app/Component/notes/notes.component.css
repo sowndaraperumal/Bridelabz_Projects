@@ -1,0 +1,81 @@
+/* .inputclass{
+
+  outline: none;
+  outline-style: none;
+  box-shadow: none;
+  border-color: transparent;
+  border: solid 0px transparent;
+  }
+  
+  
+  .takeanote{
+  outline: none;
+  outline-style: none;
+  box-shadow: none;
+  border-color: transparent;
+  border: solid 0px transparent;
+  max-height: 400px;
+  overflow-y: auto; 
+  }
+  
+  .cardresize{
+  
+  width: 100%;
+  /* min-height:100px; */
+  
+
+/*   
+  .color1{
+  color:yellow;
+  } */
+/*   
+.center{
+ 
+  margin-top: 8%;
+  margin-bottom: auto;
+  margin-left:5%;
+  margin-right: auto;
+  width: 28%; } */
+
+
+.addNoteInput {
+  border: none;
+  outline: none;
+  resize: none;
+  width: 50%;
+  font-size: 14px;
+
+}
+
+.addNoteTitleInput{
+
+  border: none;
+  outline: none;
+  resize: none;
+  width: 80%;
+  
+  font-size: 14px;
+
+
+}
+.pinIcon{
+  margin-top: 0%;
+
+}
+
+.addNote {
+  margin: 9px ;
+  border-color: white;
+  box-shadow: 0px 1px 5px;
+  vertical-align: middle;
+  border-radius: 8px;
+  width: 280px;
+  padding: 10px;
+  opacity: .7;
+}
+
+
+.addNoteInputDiv {
+  opacity: 0.7;
+  margin: auto;
+}

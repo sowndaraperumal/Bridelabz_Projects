@@ -1,0 +1,415 @@
+<!-- 
+<div class="center">
+<mat-accordion >
+            
+
+
+    <mat-expansion-panel class="addNoteInputDiv" (opened)="panelOpenState = true"
+           (closed)="panelOpenState = false">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+   <textarea class="addNoteInput" placeholder=" {{panelOpenState ? 'title' : 'Take a note..'}}" ></textarea> 
+
+        
+      </mat-panel-title>
+      
+    </mat-expansion-panel-header>
+    
+    
+
+       
+      
+           <textarea class="addNoteInput" placeholder="Title" ></textarea> 
+      
+          <textarea class="addNoteInput" placeholder="Take a note..."></textarea>
+      
+        
+        
+
+  
+    <mat-action-row>
+      <div style="width:85cm">
+      <button mat-icon-button >
+            <mat-icon class="add_alert">add_alert</mat-icon>
+          </button>
+        
+        
+          <button mat-icon-button >
+              <mat-icon class="person_add">person_add</mat-icon>
+            </button>
+        
+          
+            <button mat-icon-button >
+              
+                <button mat-icon-button  [matMenuTriggerFor]="palette">
+                    <mat-icon class="palette">palette
+                   </mat-icon></button>
+   <mat-menu #palette="matMenu">
+     <button mat-menu-item>  <button mat-mini-fab></button></button>
+     <button mat-menu-item> <button mat-mini-fab color="primary"></button>
+    </button>
+      <button mat-menu-item><button mat-mini-fab color=#64b5f6></button></button>
+     <button mat-menu-item><button mat-mini-fab color="black"></button></button>
+     <button mat-menu-item> <button mat-mini-fab color="green"></button></button>
+   
+
+    </mat-menu>
+
+
+
+
+
+
+
+              </button>
+           
+            
+            <button mat-icon-button >
+                  <mat-icon class="photo">photo</mat-icon>
+                </button> 
+            
+                <button mat-icon-button >
+                    <mat-icon class="archive">archive</mat-icon>
+                  </button>
+             
+                    <button mat-button [matMenuTriggerFor]="menu">
+                        <mat-icon class="more_vert">more_vert</mat-icon>
+
+                    </button>
+                
+                    <mat-menu #menu="matMenu">
+                      <button mat-menu-item>add Label</button>
+                      <button mat-menu-item>Show tick boxes</button>
+                    </mat-menu>
+                  </div>
+
+
+(click)="noteSave()"
+
+                       <button mat-button color="warn" (click)="close()">close</button>
+                      
+    </mat-action-row>
+     
+  </mat-expansion-panel>
+</mat-accordion>
+
+</div> -->
+<!-- <div class="center"> 
+    
+        <mat-card *ngIf=!barshow (click)="fullCardShow()" class="notebarshape">
+          Take A Note ...
+             
+           <button mat-icon-button matTooltip="Drawing is not avaible"  >
+              <mat-icon class="photo"  style="font-size: 17px;">brush</mat-icon>
+            </button> 
+          <button mat-icon-button matTooltip="New note with image" >
+              <mat-icon class="photo" style="font-size: 17px;">photo</mat-icon>
+            </button> 
+        
+            <button mat-icon-button matTooltip="Add image" >
+                <mat-icon class="photo" style="font-size: 17px;">brush</mat-icon>
+              </button>   
+              
+        </mat-card>
+        
+        <mat-card *ngIf=barshow class="notebarshape">
+        <mat-card-title >   
+          <label>  
+          <input class="inputclass" matInput placeholder="Title" [(ngModel)]="createnote.title" style="margin-left:20px;"  > 
+        </label>
+          </mat-card-title>   
+          <mat-card-subtitle>
+              <label>
+                  <textarea  
+                    
+                   class="takeanote"
+                   placeholder="Take a note..." 
+                            cdkTextareaAutosize
+                            #autosize="cdkTextareaAutosize"
+                            cdkAutosizeMinRows="1"
+                            cdkAutosizeMaxRows="50"  [(ngModel)]="createnote.description"></textarea>
+                
+
+                          </label>
+        </mat-card-subtitle>
+       
+       
+<mat-card-footer >  
+                   <button  mat-icon-button  [matMenuTriggerFor]="remind" matTooltip="add_alert">
+                    <mat-icon class="add_alert"style="font-size: 15px;">add_alert</mat-icon>
+
+                </button>
+                <mat-menu #remind="matMenu" style="width:150px;">
+            Reminder:
+                  <button mat-menu-item>Later today</button>
+                  <button mat-menu-item>Tomorrow</button>
+                    <button mat-menu-item>Next week</button>
+                  <button mat-menu-item>Home</button>
+                  <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+                  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                  <mat-datepicker #picker></mat-datepicker>
+                  <button mat-menu-item>Select place</button>
+                </mat-menu>
+                  
+                    <button mat-icon-button   matTooltip="collaborator">
+                        <mat-icon class="person_add" style="font-size: 15px;">person_add</mat-icon>
+                      </button>
+                  
+                     
+                         
+            <button mat-icon-button [matMenuTriggerFor]="menucolor"  matTooltip="change color">
+              palette
+              </mat-icon>
+              </button>
+              <mat-menu #menucolor="matMenu">
+              <mat-list>
+              <div *ngFor= "let colorx of colors">
+              <span *ngFor="let singlecolor of colorx">
+              <button mat-icon-button >
+              <mat-icon [style.color]="singlecolor">fiber_manual_record</mat-icon>
+              </button>
+              </span>
+              </div>
+              </mat-list>
+              </mat-menu>  
+                     
+                       
+                      <button mat-icon-button matTooltip="Add image" >
+                            <mat-icon class="photo" style="font-size: 17px;">photo</mat-icon>
+                          </button> 
+                      
+                          <button mat-icon-button matTooltip="Archive"  (click)="archive()">
+                              <mat-icon class="archive" style="font-size: 17px;" >archive</mat-icon>
+                            </button>
+                       
+                              <button mat-button [matMenuTriggerFor]="menu" matTooltip="More">
+                                  <mat-icon class="more_vert"style="font-size: 17px;">more_vert</mat-icon>
+
+                              </button>
+                          
+                              <mat-menu #menu="matMenu">
+                                <button mat-menu-item>add Label</button>
+                                <button mat-menu-item>Show tick boxes</button>
+                              </mat-menu>
+                           
+
+
+
+
+                                 <button mat-button color="warn" (click)="noteSave()">close</button>
+                
+                                </mat-card-footer>
+       
+        </mat-card>
+        
+      
+</div>
+
+
+
+
+
+
+
+
+<div  *ngIf=getnote >
+  <div  fxLayout="row wrap"  >
+      
+    <app-notes *ngFor="let note of allnotes" [noteDetail]=note class="notepading"></app-notes>
+
+</div>
+</div> 
+
+<div class="bulb" *ngIf=showicon>
+  
+<i class="material-icons " style="font-size: 90px;" >lightbulb_outline</i>
+
+</div>
+<P class="textsize" *ngIf=showicon >Notes that you add appear here </P>-->
+ <!-- <button class="pinIcon" mat-icon-button matTooltip="Pin/Unpin Note" (click)="pinOption(item)">
+      <ng-container *ngIf="pinOption; else elsePinTemplate">
+        <svg-icon [src]="pinnedIconSrc"> </svg-icon>
+      </ng-container>
+      <ng-template #elsePinTemplate>
+        <svg-icon [src]="unpinnedIconSrc"> </svg-icon>
+      </ng-template>
+    </button> -->
+    
+  <!-- <button>
+<i style="font-size:24px" class="fa fa-thumb-tack">&#xf08d;</i>
+</button> -->
+
+<div *ngIf="!isOpen" class="addNote" (click)="isOpen=true"  >
+
+  <div class="addNoteInputDiv">Take a note...</div>
+
+</div>
+
+<div *ngIf="isOpen" class="addNote" [ngStyle]="{'backgroundColor': color}">
+
+  <div class="addNoteInputDiv">
+
+    <textarea [ngStyle]="{'backgroundColor': color}" class="addNoteTitleInput" 
+    matInput
+    cdkTextareaAutosize
+                            #autosize="cdkTextareaAutosize"
+                            cdkAutosizeMinRows="1"
+                            cdkAutosizeMaxRows="5"
+    
+    placeholder="Title"[(ngModel)]="createnote.title"></textarea>
+   <button  (click)="pinChange()"> <img class="fundooIcon" style="width:20px;height:20px;" src="/../assets/pin1.png">
+   </button>
+
+
+
+
+    <textarea [ngStyle]="{'backgroundColor': color}" class="addNoteInput" placeholder="Take a note..."  
+    matInput
+    cdkTextareaAutosize
+                            #autosize="cdkTextareaAutosize"
+                            cdkAutosizeMinRows="1"
+                            cdkAutosizeMaxRows="50"
+    
+    [(ngModel)]="createnote.description"></textarea>
+  </div>
+  <div class="addNoteControlIcon">
+
+    <button mat-icon-button matTooltip="Remind me" (click)="toggleReminderMenu()" (click)="toggleShowReminder()">
+      <mat-icon class="mat-18">notifications
+      </mat-icon>
+    </button>
+
+    <div class="reminderMenu" *ngIf="reminderMenuBool">
+
+        <span>Reminder:</span>
+
+        <div>
+            <input class="setReminderInput" matInput [matDatepicker]="picker" placeholder="Choose a date" autocomplete="off">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </div>
+      
+      
+        <div>
+      
+            <input class="setReminderInput" atp-time-picker placeholder="Set time" value="">
+        
+        </div>
+      
+        <button mat-button (click)="save()">Set Reminder</button>
+      
+      </div>
+
+    <button mat-icon-button matTooltip="Collaborator">
+      <mat-icon class="mat-18">person_add_outline
+      </mat-icon>
+    </button>
+
+    <button mat-icon-button matTooltip="Change color" [matMenuTriggerFor]="colorMenu">
+      <mat-icon class="mat-18">color_lens</mat-icon>
+    </button>
+
+    <button mat-icon-button matTooltip="Add image">
+      <mat-icon class="mat-18">photo</mat-icon>
+    </button>
+
+    <button mat-icon-button matTooltip="Archive" (click)="archive()">
+      <mat-icon class="mat-18">archive</mat-icon>
+    </button>
+
+    <button mat-icon-button matTooltip="More"  (click)="showView()" >
+      <mat-icon class="mat-18" >more_vert</mat-icon>
+    </button>
+     
+    <button mat-button color="warn" (click)="noteSave()">close</button>
+
+  </div>
+
+</div>
+
+<mat-menu #colorMenu="matMenu" class="colorMenu">
+
+  <ng-template matMenuContent let-note="note">
+
+    <div *ngFor="let color of colorCode">
+
+      <button mat-icon-button [ngStyle]="{'color': color.colorCode}" (click)="changeColor(color.colorCode)">
+
+        <mat-icon class="colorIcons">fiber_manual_record</mat-icon>
+
+      </button>
+
+    </div>
+
+  </ng-template>
+
+</mat-menu>
+<!--  
+
+<mat-menu #moreMenu="matMenu">
+   
+        <button mat-menu-item [matMenuTriggerFor]="addlabel">add label</button>
+        <button mat-menu-item >Show trick</button>
+      </mat-menu>
+      
+      <mat-menu #addlabel="matMenu">
+        
+        <button mat-menu-item   >add label</button>
+        
+    <textarea 
+    
+    placeholder="Title"></textarea>
+      </mat-menu> -->
+     
+
+  
+<div class="place" *ngIf="show" >
+<!-- 
+<mat-card>
+
+
+  <button (click)="showLabel()"   >add label</button>
+</mat-card> -->
+<button (click)="showLabel()" >abb label</button>
+<button (click)="showLabel()" >show trick box</button>
+</div>
+
+<div class="addlabel" *ngIf="showlabel" >
+  <h5>add label</h5>  
+  <mat-toolbar>
+      <mat-toolbar-row  style="background-color:white">
+  <input class="inputDiv" type="text"  (input)="insertName($event)" placeholder="create a note" 
+    >
+  
+
+    <button mat-icon-button matTooltip="search">
+        <mat-icon class="mat-18">search</mat-icon>
+      </button>
+  </mat-toolbar-row>
+  
+    </mat-toolbar>
+    <mat-toolbar-row >
+      <button>create label</button>
+    <textarea  class="inputDiv" style="width:80%"  maxlength="10" value={{text}}
+
+  cdkTextareaAutosize
+           #autosize="cdkTextareaAutosize"
+                      cdkAutosizeMinRows="1"
+                          cdkAutosizeMaxRows="3"
+></textarea>
+</mat-toolbar-row>
+</div>
+
+  
+  <!-- <div class="bulb" *ngIf=showicon>
+    
+  <i class="material-icons " style="font-size: 90px;" >lightbulb_outline</i>
+  <P class="textsize" *ngIf=showicon >Notes that you add appear here </P>
+  </div> -->
+ <!-- 
+  <div  *ngIf=getnote >
+    <div  fxLayout="row wrap"  >
+        
+      <app-notes *ngFor="let note of allnotes" [noteDetail]=note class="notepading"></app-notes>
+    
+  </div>--> 

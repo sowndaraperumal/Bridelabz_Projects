@@ -1,0 +1,40 @@
+<app-add-note>
+
+</app-add-note>
+
+
+<p>pinned</p>
+    <div *ngFor="let note of allnotes">
+
+     
+    
+    <div *ngIf="!note.archive && !note.trash && !note.pinned ">
+       
+        
+                <app-notes [noteDetail]=note>
+
+                </app-notes>
+          
+        
+
+    </div>
+</div>
+
+
+
+<p>others</p>    
+        <div *ngFor="let note of allnotes">
+    
+                
+        <div *ngIf="!note.archive && !note.trash &&     note.pinned">
+           
+               
+                    <app-notes [noteDetail]=note>
+    
+                    </app-notes>
+              
+            
+    
+        </div>
+    </div>
+    

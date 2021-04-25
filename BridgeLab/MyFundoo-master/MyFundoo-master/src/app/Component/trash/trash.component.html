@@ -1,0 +1,25 @@
+
+
+<div class="bulb" >
+                <p>Notes in the Recycle Bin are deleted after 7 days.</p>
+        <i class="material-icons " style="font-size: 90px;" >delete</i>
+       
+        </div>
+        <P class="textsize">No notes in Recycle Bin </P>
+       
+       
+       <div>      
+                <div *ngFor="let note of allnotes" >
+                                <div *ngIf=" note.trash ">
+        <app-trash-bar [noteDetail]=note>
+        
+                </app-trash-bar>
+            
+            
+        </div>  </div>
+            
+        </div>
+
+            
+            
+             

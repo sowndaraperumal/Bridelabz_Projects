@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+     
+
+	<bean id="sim" class="com.bridgeit.springinversionofcontroller.Jio"></bean>
+	 <bean id="student3" class="com.bridgeit.dependencyinjection.Student"> 
+		<property name="studentName" value="sowndar"></property> </bean>
+	<!-- consturctor <bean id="stu" class="com.bridgeit.dependencyinjection.Student"> 
+		<constructor-arg name="studentName" value="sowndara perumal"></constructor-arg> 
+		</bean> -->
+	<bean id="mathcheat" class="com.bridgeit.dependencyinjectionobject.MathCheat"></bean>
+	<bean id="sciencecheat" class="com.bridgeit.dependencyinjectionobject.ScienceCheat"></bean>
+	<bean id="javacheat" class="com.bridgeit.dependencyinjectionobject.JavaCheat"></bean>
+	<bean id="student1" class="com.bridgeit.dependencyinjectionobject.Student">
+		<property name="id" value="1"></property>
+		<property name="cheat" ref="sciencecheat">
+		</property>
+	</bean>
+	<bean id="student2" class="com.bridgeit.dependencyinjectionobject.Student">
+		<property name="id" value="2"></property>
+		<property name="cheat" ref="javacheat">
+		</property>
+	</bean>
+	<bean id="anothertudent" class="com.bridgeit.dependencyinjectionobject.AnotherStudent">
+		<property name="id" value="3"></property>
+		<property name="cheat" ref="mathcheat">
+		</property>
+	</bean>
+	<context:annotation-config/>	
+	<bean id="hearthuman" class="com.bridgeit.autowired.Heart">
+	  <property name="humanname" value="sowndar"/>
+	 
+	</bean>
+	
+	<bean id="octpousheart" class="com.bridgeit.autowired.Heart">
+<property name="humanname" value="devil"/>
+	
+	</bean> 
+	
+	
+<!-- 		<bean id="human" class="com.bridgeit.autowired.Human" autowire="byName">
+	<bean id="human" class="com.bridgeit.autowired.Human" autowire="byType">	<bean id="human" class="com.bridgeit.autowired.Human" autowire="constructor">
+ -->	
+	<bean id="human" class="com.bridgeit.autowired.Human" >
+	<!-- <property name="heart" ref="heart" >
+	
+	</property> -->
+	</bean>
+	
+	
+	
+	
+	
+	
+	
+</beans>
+   
